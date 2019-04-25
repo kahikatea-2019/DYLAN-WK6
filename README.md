@@ -1,4 +1,4 @@
-# Ear Muffz
+# Ear Mufflaz
 
 ## Setup
 
