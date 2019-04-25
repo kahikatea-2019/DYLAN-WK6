@@ -1,5 +1,5 @@
 export default {
-  beers: [
+  products: [
     {
       id: 1,
       name: 'HBIB Ginger Fusion',
