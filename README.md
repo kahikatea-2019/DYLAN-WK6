@@ -1,4 +1,4 @@
-# Ear Mufflaz
+# Mufflaz
 
 ## MVP
 As a user I wanna see a listing of product tile with name, price and description.
