@@ -2,55 +2,55 @@ import React from 'react'
 import { connect } from 'react-redux'
 
 import AddProduct from './AddProduct'
-import { getWombats, showError } from '../actions'
+import { getProducts, showError } from '../actions'
 
-class Wombats extends React.Component {
+class Products extends React.Component {
   componentDidMount () {
-    this.props.getWombats()
+    this.props.getProducts()
   }
 
-  handleDelete = wombat => {
+  handleDelete = product => {
     return () => {
-      this.props.deleteWombat(wombat)
+      this.props.deleteProduct(product)
     }
   }
 
   render () {
-    const { wombats, isLoading, displayError } = this.props
+    const { products, isLoading, displayError } = this.props
 
     return (
       <React.Fragment>
-        <h1>Wombats</h1>
+        <h1>Products</h1>
         {isLoading && <div>Loading...</div>}
         <ul>
-          {wombats.map(wombat =>
+          {products.map(product =>
             (
-              <li key={wombat.name}>
-                {wombat.name} {' '}
-                <button onClick={this.handleDelete(wombat.name)}>Delete</button>
+              <li key={product.name}>
+                {product.name} {' '}
+                <button onClick={this.handleDelete(product.name)}>Delete</button>
               </li>
             )
           )}
         </ul>
         {displayError && <div style={{ color: 'red' }}>Something went wrong</div>}
-        <AddWombat />
+        <AddProduct />
       </React.Fragment>
     )
   }
 }
 
-function mapStateToProps ({ wombats, isLoading, showError }) {
+function mapStateToProps ({ products, isLoading, showError }) {
   return {
-    wombats,
+    products,
     isLoading,
     showError
   }
 }
 
 const mapDispatchToProps = {
-  deleteWombat,
-  getWombats,
+  deleteProduct,
+  getproducts,
   showError
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Wombats)
+export default connect(mapStateToProps, mapDispatchToProps)(Products)
